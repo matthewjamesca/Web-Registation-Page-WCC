@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+
+  <!--Logic + jQuery-->
+  <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+	<script type="text/javascript" src="js/logic.js"></script>
+  
+	<!--Google Font Ubuntu - Free for commercial and personal use. Source: https://developers.google.com/fonts/-->
+	<link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+
+	<title>A3</title>
+</head>
+<body>
+
+<!--Background image free for commercial use with no attribution required
+  Source: https://pixabay.com/en/mockup-design-device-own-layout-2824850/*/-->
+<img src="images/bg.jpg" id="bg" alt="">
+
+<header>
+	<h1><a id="headingLink" href="#">&lt; / CODE &gt;</a></h1>
+
+	<nav>
+	<ul class="navigation">
+		<li><a href="#">Login</a></li>
+		<li><a href="#">Support</a></li>
+	</ul>
+	</nav>
+</header>
+
+<!-- Modal view for submission button -->
+<div id="myModal" class="modal">
+
+  <!-- Modal content -->
+  <div class="modal-content">
+    <div class="modal-body">
+      <span class="close">&times;</span>
+      <h3> Registration Complete! </h3>
+      <p id="thankyou">Thank you for signing up for code and providing us with the following information:</p>
+      <p id="confirmationString"></p>
+    </div>
+  </div>
+
+</div>
+
+
+<div id="container">
+  <!-- Column 1 -->
+  <div id="formcontent">
+  	<!-- The instructions weren't incredibly clear. It stated that I should use fieldsets, but I figured that
+  		the design I used didn't need legends, or a fieldset tag, due to its brievity. On top of this, I would like to point out 
+  		that there was no indication of which fieldset to put the password in. Because of this, I didn't include
+  		a fieldset. -->
+  	<h2> Create your code account: </h2>
+  	<form id=signupform>
+  		<p><label for="inFname">Name</label><br/>
+  		<input id="inFname" onFocus="clearFnameField()" onBlur="validateFirstName()" type="text" name="firstname" size="21" value="First"/>
+  		<input id="inLname" onFocus="clearLnameField()" onBlur="validateLastName()" type="text" name="lastname" size="21" value="Last"/>
+  		</p>
+
+  		<p class="feedback" id="nameFeedback"></p>
+
+  		<p><label for="email">Email address</label><br/>
+  		<input id="email" onBlur="validateEmail()" type="text" name="email" size="50" />
+  		</p>
+
+  		<p class="feedback" id="emailFeedback"></p>
+
+  		<p><label for="password">Create a password</label><br/>
+  		<input id="password" onBlur="validatePassword()" type="password" name="password" size="50" />
+  		</p>
+
+  		<p class="feedback" id="passFeedback"></p>
+
+  		<p><label for="confirmedpass">Confirm your password</label><br/>
+  		<input id="confirmedpass" onBlur="validateConfirmedPassword()" type="password" name="confirmedpass" size="50" />
+  		</p>
+
+  		<p class="feedback" id="confPassFeedback"></p>
+
+  		<p><label for="country">Country of residence</label><br/>
+	  		<select id ="country" name="country">
+			  <option value="Canada">Canada</option>
+			  <option value="USA">United States</option>
+			  <option value="Mexico">Mexico</option>
+			</select>
+  		</p>
+
+  		<p><label for="address">Street address</label><br/>
+  		<input id="address" onBlur="validateAddress()" type="text" name="address" size="50" />
+  		</p>
+
+  		<p class="feedback" id="addressFeedback"></p> 
+
+  		<p><label for="postal">Postal code</label><br/>
+  		<input id="postal" onBlur="validatePostal()" type="text" name="postal" size="50" />
+  		</p>
+
+  		<p class="feedback" id="postalFeedback"></p>
+
+  		<button type="button" onclick="submitForm()">Sign me up</button>
+  	</form>
+  </div>
+
+  <!-- Column 2 -->
+  <div id="sidecontent">
+  	<!-- All icons free for commercial use. Source https://www.iconfinder.com/iconsets/social-media-2151 -->
+  	<ul>
+  		<li><a href="#"><img src="images/fbicon.png" alt="Facebook Icon" height="42" width="42"></a></li>
+  		<li><a href="#"><img src="images/twittericon.png" alt="Twitter Icon" height="42" width="42"></a></li>
+  		<li><a href="#"><img src="images/youtubeicon.png" alt="Youtube Icon" height="42" width="42"></a></li>
+  		<li><a href="#"><img src="images/pinteresticon.png" alt="Pinterest Icon" height="42" width="42"></a></li>
+  	</ul>
+  </div>
+</div>
+
+</body>
+</html>
